@@ -8,10 +8,17 @@
  * Controller of the ndiaApp
  */
 angular.module('ndiaApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+.controller('MainCtrl', function ($scope) {
+  $scope.categories = [
+    {
+    name: 'Computers',
+    description: 'Find out where to use a computer and where to get online.'
+  }, {
+    name: 'Classes',
+    description:
+      'Learn something new with computer and technology-related classes.'
+  }, {
+    name: 'Events',
+    description: 'Check out upcoming technology events in the Northside.'
+  }];
+});
