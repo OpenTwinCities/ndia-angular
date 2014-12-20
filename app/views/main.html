@@ -1,20 +1,16 @@
-<div class="jumbotron">
-  <div class="btn-group btn-group-lg" role="group"
-    aria-label="Resource categories" ng-repeat="category in categories">
-    <button type="button" class="btn btn-default"
-      ng-click="button = {{category.name}}">
-      {{category.name}}
-    </button>
-  </div>
-  <div class="btn-group btn-group-lg" role="group" aria-label="Show more">
-    <button type="button" class="btn btn-default ng-click="button = more">
-      More...
-    </button>
-  </div>
-  <div class="btn-group" role="group" aria-label="Show map">
-    <button type="button" class="btn btn-success" ng-click="button = map">
-      Show the Map
-    </button>
-  </div>
-</div>
-
+<section ng-controller="PanelCtrl as panel">
+  <ul class="nav nav-pills">
+    <li ng-class="{ active: panel.isSelected(1)}">
+      <a href ng-click="panel.selectTab(1)">Computers</a>
+    </li>
+    <li ng-class="{ active: panel.isSelected(2)}">
+      <a href ng-click="panel.selectTab(2)">Classes</a>
+    </li>
+    <li ng-class="{ active: panel.isSelected(3)}">
+      <a href ng-click="panel.selectTab(3)">Events</a>
+    </li>
+    <li ng-class="{ active: panel.isSelected(4)}">
+      <a href ng-click="panel.selectTab(4)">More...</a>
+    </li>
+  </ul>
+</section>
