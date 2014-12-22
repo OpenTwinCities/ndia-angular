@@ -1,7 +1,10 @@
 ndia-angular
 ============
 
-Modular front-end client for ndia-django
+Modular front-end client for [ndia-django](https://github.com/OpenTwinCities/ndia-django). 
+
+The Angular portion of the NDIA project aims to build a responsive, well designed frontend for
+users to find information about public technology centers, classes, and events in North Minneapolis.
 
 ---
 ## Clone ndia-angular #
