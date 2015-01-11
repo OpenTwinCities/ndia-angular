@@ -17,13 +17,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+	"leaflet-directive"
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
@@ -33,3 +34,23 @@ angular
         redirectTo: '/'
       });
   });
+  
+ //wire up the sidebar button to hide the sidebar
+  $("#sidebar-hide-btn").click(function() {
+  $('#sidebar').hide();
+  map.invalidateSize();
+});
+
+//wire up the nav sidebar link to toggle the sidebar
+$("#sidebar-toggle-btn").click(function() {
+  $("#sidebar").toggle();
+  map.invalidateSize();
+  return false;
+});
+
+//The leaflet map
+var map = L.map('map').setView([45,-93.267],12);
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+
